@@ -24,7 +24,6 @@ export default class FindBestRouteService {
     }
 
     const routes = routesRepository.all();
-    //console.log("All routes: ", routes);
 
     const graph = new Graph();
 
