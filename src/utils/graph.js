@@ -71,7 +71,7 @@ class Graph {
     }
   }
 
-  shortestPath(source, destination) {
+  bestPath(source, destination) {
     // distances object: to store the distances to all the nodes from the source node.
     const distances = {};
     distances[source] = 0;
