@@ -1,7 +1,7 @@
-import express from "express";
-import { errors } from "celebrate";
+import express from 'express';
+import { errors } from 'celebrate';
 
-import routes from "./routes";
+import routes from './routes';
 
 const app = express();
 

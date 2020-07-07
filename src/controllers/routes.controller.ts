@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import AppError from "../errors/AppError";
-import RoutesRepository from "../repositories/routes.repository";
-import FindBestRouteService from "../services/FindBestRoute.service";
+import AppError from '../errors/AppError';
+import RoutesRepository from '../repositories/routes.repository';
+import FindBestRouteService from '../services/FindBestRoute.service';
 
 export default class RoutesController {
   public async create(request: Request, response: Response) {
@@ -20,9 +20,7 @@ export default class RoutesController {
       return response.json(route);
     } catch (error) {
       if (error instanceof AppError) {
-        return response
-          .status(error.statusCode)
-          .json({ message: error.message });
+        return response.status(error.statusCode).json({ message: error.message });
       }
       return response.status(500).json({ message: error.message });
     }
@@ -43,9 +41,7 @@ export default class RoutesController {
       return response.json(bestRoute);
     } catch (error) {
       if (error instanceof AppError) {
-        return response
-          .status(error.statusCode)
-          .json({ message: error.message });
+        return response.status(error.statusCode).json({ message: error.message });
       }
       return response.status(500).json({ message: error.message });
     }
