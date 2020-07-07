@@ -1,9 +1,5 @@
-import AppError from "../errors/AppError";
-import {
-  addNewRow,
-  readInputFile,
-  getFilePath,
-} from "../utils/fileOperations.js";
+import AppError from '../errors/AppError';
+import { addNewRow, readInputFile, getFilePath } from '../utils/fileOperations.js';
 
 interface Route {
   origem: string;
@@ -18,10 +14,10 @@ export default class RoutesRepository {
     const file: Route[] | null = readInputFile(getFilePath());
 
     if (file == null) {
-      throw new AppError("Input file do not exists.", 500);
+      throw new AppError('Input file do not exists.', 500);
     }
 
-    this.routes = file.map((route) => {
+    this.routes = file.map(route => {
       route.custo = +route.custo;
       return route;
     });
@@ -32,11 +28,11 @@ export default class RoutesRepository {
   }
 
   public checkOrigin(origem: string): Boolean {
-    return this.routes.some((route) => route.origem == origem);
+    return this.routes.some(route => route.origem == origem);
   }
 
   public checkDestination(destino: string): Boolean {
-    return this.routes.some((route) => route.destino == destino);
+    return this.routes.some(route => route.destino == destino);
   }
 
   public create({ origem, destino, custo }: Route): Route {

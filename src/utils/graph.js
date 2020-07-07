@@ -58,18 +58,16 @@ class Graph {
   printGraph() {
     let currentRoot = this.head;
     while (currentRoot != null) {
-      process.stdout.write("|" + currentRoot.value + "| -> ");
+      process.stdout.write('|' + currentRoot.value + '| -> ');
 
       let currentNode = currentRoot.root;
       while (currentNode != null) {
-        process.stdout.write(
-          currentNode.value + "(" + currentNode.cost + ")" + " -> "
-        );
+        process.stdout.write(currentNode.value + '(' + currentNode.cost + ')' + ' -> ');
         currentNode = currentNode.next;
       }
 
       currentRoot = currentRoot.next;
-      process.stdout.write(" NULL\n");
+      process.stdout.write(' NULL\n');
     }
   }
 
@@ -106,11 +104,9 @@ class Graph {
             */
             if (
               !distances.hasOwnProperty(currentNode.value) ||
-              distances[currentNode.value] >
-                distances[current.value] + currentNode.cost
+              distances[currentNode.value] > distances[current.value] + currentNode.cost
             ) {
-              distances[currentNode.value] =
-                distances[current.value] + currentNode.cost;
+              distances[currentNode.value] = distances[current.value] + currentNode.cost;
               pred[currentNode.value] = current.value;
             }
 
