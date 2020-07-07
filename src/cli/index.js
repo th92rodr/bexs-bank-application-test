@@ -19,16 +19,13 @@ function init() {
   console.log("Initializing...");
 
   const inputFilePath = parseFilePath();
-  //console.log("inputFilePath: ", inputFilePath);
 
   const inputFile = readInputFile(inputFilePath);
-  //console.log("inputFile: ", inputFile);
   if (inputFile == null) {
     console.log("Input file do not exists.");
   }
 
   const routes = parseInputFile(inputFile);
-  //console.log("routes: ", routes);
 
   console.log("Initialized\n");
   return routes;
@@ -94,8 +91,6 @@ function findBestRoute(routes, origem, destino) {
   routes.forEach((route) => {
     graph.addEdge(route.origem, route.destino, route.custo);
   });
-
-  graph.printGraph();
 
   const bestRoute = graph.shortestPath(origem, destino);
 

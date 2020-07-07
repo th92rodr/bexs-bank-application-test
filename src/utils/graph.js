@@ -74,15 +74,22 @@ class Graph {
   }
 
   shortestPath(source, destination) {
+    // distances object: to store the distances to all the nodes from the source node.
     const distances = {};
     distances[source] = 0;
 
+    // pred object: to store the predecessor of each node.
     const pred = {};
+
+    // visited set: to mark the visited nodes.
     const visited = new Set();
+
+    // queue: to store the next nodes to be visited.
     const queue = [];
     queue.push(source);
 
     while (queue.length > 0) {
+      // get the next node to be visited and mark it as visited.
       let node = queue.shift();
       visited.add(node);
 
@@ -92,6 +99,11 @@ class Graph {
           let currentNode = current.root;
 
           while (currentNode != null) {
+            /*
+              if the current node is not in the distances object
+              or its current value in the obj is greater than the new value
+              update the distances obj.
+            */
             if (
               !distances.hasOwnProperty(currentNode.value) ||
               distances[currentNode.value] >
@@ -102,6 +114,7 @@ class Graph {
               pred[currentNode.value] = current.value;
             }
 
+            // put the current node neighbors which weren't visited yet in the queue.
             if (!visited.has(currentNode.value)) {
               queue.push(currentNode.value);
             }
@@ -120,6 +133,7 @@ class Graph {
       return null;
     }
 
+    // find the path between source and destination using the predecessor object
     const path = [];
     path.unshift(destination);
     let x = pred[destination];
