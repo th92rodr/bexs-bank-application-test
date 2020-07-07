@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 import AppError from "../errors/AppError";
 import RoutesRepository from "../repositories/routes.repository";
-import FindBestRouteService from "../service/FindBestRoute.service";
+import FindBestRouteService from "../services/FindBestRoute.service";
 
 export default class RoutesController {
   public async create(request: Request, response: Response) {
