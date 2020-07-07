@@ -31,8 +31,6 @@ export default class FindBestRouteService {
       graph.addEdge(route.origem, route.destino, route.custo);
     });
 
-    graph.printGraph();
-
     const bestRoute: BestRouteResponse | null = graph.shortestPath(
       origem,
       destino
