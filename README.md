@@ -1,10 +1,10 @@
 # Bexs Banco Teste
 
-This app has the objective of helping tourists travel around the world, paying the less possible.
+This app has the objective of helping tourists travel around the world, paying the least possible.
 
 To do that, the app will calculate the cheaper route between two locations, so tourists can travel saving money.
 
-All the routes this app has access to will be store in a `csv` file.
+All the routes this app has access to will be stored in a `csv` file.
 
 This `csv` file follows the format below:
 
@@ -34,7 +34,7 @@ To run the application, the following programs must be installed:
   - `NPM`:<br />
     required version 6.14
 
-    `NPM` will be installed along side Node.
+    Installing `Node` will also install `NPM` automatically.
 
   - `Yarn`:<br />
     required version 1
@@ -47,33 +47,33 @@ To run the application, the following programs must be installed:
 
 The API implementation follows some patterns described below.
 
-The **Data Mapper Pattern** ou **Repository Pattern** consists of a link between the application and the font of data been used (which can be a database, a file, or any other source of data).
+The **Data Mapper Pattern** or **Repository Pattern** consists of a link between the application and the font of data being used (which can be a database, a file, or any other source of data).
 
 This pattern aims to isolate the communication with the database.
 
 The **Service Pattern** has the objective of abstracting the business logic of the application.
 
-By using this pattern, the application was able to make the code reusable and easier to maintain.
+By using this pattern, I was able to make the code reusable and easier to maintain.
 
 Each service is the only responsible for a unique operation (which means, if other services need to execute an operation, they will call the service responsible for it and not implement the operation themselves).
 
 Following this pattern, the app is also following the **DRY** principle (Don't Repeat Yourself).
 
-By using these patterns this application was able to achieve the following principles:
+By using these patterns I was able to apply the following principles:
 
-- **SoC (Separation of Concerns)**: Esse princípio zela pela separação de responsabilidades de cada arquivo.
+- **SoC (Separation of Concerns)**: This principle preaches the separation of responsibilities in each file.
 
-- **DRY (Don't Repeat Yourself)**: Esse princípio zela pelo maior reaproveitamento de código. Esse princípio não preza necessariamente pela não-repetição de código e sim regras de negócio.
+- **DRY (Don't Repeat Yourself)**: This principle preaches for reusable code. However, this principle does not necessarily preach for non-repetition of code, but for business logic.
 
-- **SRP (Single Responsability Principle)**: Esse princípio zela que uma classe deve possuir apenas uma responsabilidade.
+- **SRP (Single Responsability Principle)**: This principle preaches that each class should have only a single responsibility.
 
 ---
 
-Summarizing the entities responsibilities:
+Summarizing the entities' responsibilities:
 
-- Middlewares:
+- Middlewares: execute a specific function over the request's data.
 
-- Controllers: receive requests, repass the request data, and send responses.
+- Controllers: receive requests, repass the request's data, and send responses.
 
 - Repositories: deal with data persistence.
 
@@ -121,7 +121,7 @@ input-file.csv
 
 In order to always find the best route between two locations, the application implements a **Weighted Graph** Data Structure.
 
-Each node represents a location, each edge a route, and the edge's weight represents the corresponding route's cost.
+Each vertex of the graph represents a location, each edge a route, and the edge's weight represents the corresponding route's cost.
 
 ---
 
