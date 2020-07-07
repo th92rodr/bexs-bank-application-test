@@ -46,10 +46,21 @@ describe("Route", () => {
   });
 
   it("should be able to get the best route between two locations", async () => {
-    const response = await request(app).get("/routes/?origem=GRU&destino=CDG");
+    await request(app).post("/routes").send({
+      origem: "EEE",
+      destino: "FFF",
+      custo: 25,
+    });
+    await request(app).post("/routes").send({
+      origem: "FFF",
+      destino: "GGG",
+      custo: 15,
+    });
+
+    const response = await request(app).get("/routes/?origem=EEE&destino=GGG");
 
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual("GRU-CDG > 75");
+    expect(response.body).toEqual("EEE-FFF-GGG > 40");
   });
 
   it("should not be able to get the best route between two locations without sending the origem field", async () => {
