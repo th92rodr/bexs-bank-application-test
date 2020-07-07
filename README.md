@@ -1,4 +1,4 @@
-# Bexs Banco Teste
+# Bexs Banco Test
 
 This app has the objective of helping tourists travel around the world, paying the least possible.
 
