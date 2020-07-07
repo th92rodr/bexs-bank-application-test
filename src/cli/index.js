@@ -1,8 +1,8 @@
-const path = require("path");
-const rlp = require("readline");
+const path = require('path');
+const rlp = require('readline');
 
-const Graph = require("../utils/graph");
-const { readInputFile } = require("../utils/fileOperations");
+const Graph = require('../utils/graph');
+const { readInputFile } = require('../utils/fileOperations');
 
 const readline = rlp.createInterface({
   input: process.stdin,
@@ -16,18 +16,18 @@ async function main() {
 }
 
 function init() {
-  console.log("Initializing...");
+  console.log('Initializing...');
 
   const inputFilePath = parseFilePath();
 
   const inputFile = readInputFile(inputFilePath);
   if (inputFile == null) {
-    console.log("Input file do not exists.");
+    console.log('Input file do not exists.');
   }
 
   const routes = parseInputFile(inputFile);
 
-  console.log("Initialized\n");
+  console.log('Initialized\n');
   return routes;
 }
 
@@ -36,7 +36,7 @@ function parseFilePath() {
   const filename = process.argv[2];
 
   if (filename == undefined) {
-    console.log("Input file not provided.");
+    console.log('Input file not provided.');
     process.exit(1);
   }
 
@@ -44,7 +44,7 @@ function parseFilePath() {
 }
 
 function parseInputFile(inputFile) {
-  inputFile.forEach((route) => (route.custo = +route.custo));
+  inputFile.forEach(route => (route.custo = +route.custo));
   return inputFile;
 }
 
@@ -62,18 +62,17 @@ async function exec(routes) {
 
 function getInput() {
   return new Promise((resolve, reject) => {
-    readline.question(
-      "Inform origin and destination (In this format <origin>-<destination>): ",
-      (input) => resolve(input)
+    readline.question('Inform origin and destination (In this format <origin>-<destination>): ', input =>
+      resolve(input),
     );
   });
 }
 
 function parseInput(input) {
-  const route = input.split("-");
+  const route = input.split('-');
 
   if (route.length < 2) {
-    console.log("Invalid input");
+    console.log('Invalid input');
     process.exit(1);
   }
 
@@ -84,18 +83,18 @@ function parseInput(input) {
 }
 
 function findBestRoute(routes, origem, destino) {
-  console.log("Finding the best route...");
+  console.log('Finding the best route...');
 
   const graph = new Graph();
 
-  routes.forEach((route) => {
+  routes.forEach(route => {
     graph.addEdge(route.origem, route.destino, route.custo);
   });
 
   const bestRoute = graph.shortestPath(origem, destino);
 
   if (bestRoute == null) {
-    console.log("There is no path between these two locations.");
+    console.log('There is no path between these two locations.');
     process.exit(1);
   }
 
@@ -103,12 +102,12 @@ function findBestRoute(routes, origem, destino) {
 }
 
 function parseGraphResponse({ path, cost }) {
-  let data = "";
-  path.forEach((place) => {
-    data = data + place + "-";
+  let data = '';
+  path.forEach(place => {
+    data = data + place + '-';
   });
   data = data.slice(0, -1);
-  data = data + " > " + cost;
+  data = data + ' > ' + cost;
 
   return data;
 }

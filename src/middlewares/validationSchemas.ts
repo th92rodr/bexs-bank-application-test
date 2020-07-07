@@ -1,4 +1,4 @@
-import { Joi } from "celebrate";
+import { Joi } from 'celebrate';
 
 const createRouteValidationSchema = {
   body: Joi.object().keys({
