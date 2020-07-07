@@ -91,7 +91,7 @@ function findBestRoute(routes, origem, destino) {
     graph.addEdge(route.origem, route.destino, route.custo);
   });
 
-  const bestRoute = graph.shortestPath(origem, destino);
+  const bestRoute = graph.bestPath(origem, destino);
 
   if (bestRoute == null) {
     console.log('There is no path between these two locations.');

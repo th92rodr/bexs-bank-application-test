@@ -28,7 +28,7 @@ export default class FindBestRouteService {
       graph.addEdge(route.origem, route.destino, route.custo);
     });
 
-    const bestRoute: BestRouteResponse | null = graph.shortestPath(origem, destino);
+    const bestRoute: BestRouteResponse | null = graph.bestPath(origem, destino);
 
     if (bestRoute == null) {
       throw new AppError('There is no path between these two locations.', 400);
