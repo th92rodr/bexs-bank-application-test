@@ -24,20 +24,20 @@ GRU,ORL,56
 To run the application, the following programs must be installed:
 
 - `Node.js`<br />
-  recommend version 12.18<br />
-  minimum required version 8.12<br />
+  recommend version 12.18
 
   `Node` can be installed from `https://nodejs.org/en/`.
 
-- `NPM` or `Yarn`<br />
+- `NPM` or `Yarn`
 
   - `NPM`:<br />
-    required version 6.14
+    recommend version 6.14
 
     Installing `Node` will also install `NPM` automatically.
 
   - `Yarn`:<br />
-    required version 1
+    recommend version 1.22<br />
+    required version 1.\*
 
     `Yarn` can be installed from `https://classic.yarnpkg.com/en/`.
 
