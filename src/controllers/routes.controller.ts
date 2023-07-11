@@ -22,7 +22,7 @@ export default class RoutesController {
       if (error instanceof AppError) {
         return response.status(error.statusCode).json({ message: error.message });
       }
-      return response.status(500).json({ message: error.message });
+      return response.status(500).json({ message: error });
     }
   }
 
@@ -43,7 +43,7 @@ export default class RoutesController {
       if (error instanceof AppError) {
         return response.status(error.statusCode).json({ message: error.message });
       }
-      return response.status(500).json({ message: error.message });
+      return response.status(500).json({ message: error });
     }
   }
 }

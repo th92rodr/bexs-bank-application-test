@@ -1,0 +1,101 @@
+_type: export
+__export_format: 4
+__export_date: 2023-07-11T14:21:20.209Z
+__export_source: insomnia.desktop.app:v2020.2.2
+resources:
+  - _id: req_45346ccd2a1c4743aa3faa10d547a767
+    authentication: {}
+    body: {}
+    created: 1689084945722
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1689084945722
+    method: GET
+    modified: 1689085198033
+    name: Find Best Route
+    parameters: []
+    parentId: fld_bea2e46b6fc948518f2b4b281d42ba1f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:3333/routes?origem=ABC&destino=DEF
+    _type: request
+  - _id: fld_bea2e46b6fc948518f2b4b281d42ba1f
+    created: 1689084883116
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1689084883116
+    modified: 1689084883116
+    name: Bexs Banco Test
+    parentId: wrk_6cc2ca6632944592a977582056670694
+    _type: request_group
+  - _id: wrk_6cc2ca6632944592a977582056670694
+    created: 1592343780314
+    description: ""
+    modified: 1592343780314
+    name: Insomnia
+    parentId: null
+    scope: null
+    _type: workspace
+  - _id: req_f71468feb2f54bb4b440f766b8d4c57a
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"origem": "ABC",
+        	"destino": "DEF",
+        	"custo": 10
+        }
+    created: 1689084490252
+    description: ""
+    headers:
+      - id: pair_b9b93629c76b471cab2d672f5385c105
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1689084490252
+    method: POST
+    modified: 1689085173425
+    name: Create Route
+    parameters: []
+    parentId: fld_bea2e46b6fc948518f2b4b281d42ba1f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:3333/routes
+    _type: request
+  - _id: env_b36431b2f8b4304af6eeb6a59e9448633353bcd5
+    color: null
+    created: 1592343780351
+    data: {}
+    dataPropertyOrder: null
+    isPrivate: false
+    metaSortKey: 1592343780351
+    modified: 1592343780351
+    name: Base Environment
+    parentId: wrk_6cc2ca6632944592a977582056670694
+    _type: environment
+  - _id: jar_b36431b2f8b4304af6eeb6a59e9448633353bcd5
+    cookies: []
+    created: 1592343780351
+    modified: 1592343780351
+    name: Default Jar
+    parentId: wrk_6cc2ca6632944592a977582056670694
+    _type: cookie_jar
+  - _id: spc_6703c9b1be03400b896c52fd3e762756
+    contentType: yaml
+    contents: ""
+    created: 1592343780317
+    fileName: Insomnia
+    modified: 1592343780317
+    parentId: wrk_6cc2ca6632944592a977582056670694
+    _type: api_spec

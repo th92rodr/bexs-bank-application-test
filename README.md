@@ -24,20 +24,20 @@ GRU,ORL,56
 To run the application, the following programs must be installed:
 
 - `Node.js`<br />
-  recommend version 12.18
+  recommend version v16.20.0
 
   `Node` can be installed from `https://nodejs.org/en/`.
 
 - `NPM` or `Yarn`
 
   - `NPM`:<br />
-    recommend version 6.14
+    recommend version v8.19.4
 
     Installing `Node` will also install `NPM` automatically.
 
   - `Yarn`:<br />
-    recommend version 1.22<br />
-    required version 1.\*
+    recommend version v1.22<br />
+    required version v1.\*
 
     `Yarn` can be installed from `https://classic.yarnpkg.com/en/`.
 
@@ -169,9 +169,9 @@ npm start
 
 ```json
 {
-    origem: string
-    destino: string
-    custo: number
+    "origem": string
+    "destino": string
+    "custo": number
 }
 ```
 
@@ -186,7 +186,7 @@ npm start
 
   Example of a valid request:
 
-  `GET /routes/?origem=GRU&destino=CDG`
+  `GET /routes?origem=GRU&destino=CDG`
 
 ---
 
